@@ -144,7 +144,7 @@ class Reference implements FilefieldSourceInterface {
 
       $field_definition = entity_load('field_config', $entity_type . '.' . $bundle_name . '.' . $field_name);
       if (!isset($field_definition) || $setting_search_all_fields) {
-        $field_definitions = \Drupal::entityManager()->getStorage('field_config')->loadByProperties(array('type' => array('file', 'image')));
+        $field_definitions = \Drupal::entityManager()->getStorage('field_config')->loadByProperties(array('field_type' => array('file', 'image')));
       }
       else {
         $field_definitions = array($field_definition);
